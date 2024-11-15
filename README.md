@@ -8,7 +8,7 @@
 <h3 align="center">Tool to protect against ads, trackers and malicious websites</h3>
 
 <p align="center">
-  Designed for command-line usersgit 
+  Designed for command-line users 
 </p>
 
 <p align="center">
