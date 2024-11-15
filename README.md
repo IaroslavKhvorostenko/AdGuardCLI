@@ -27,7 +27,7 @@
 
 > ### Disclaimer
 >* AdGuard CLI is not an open source project. We use GitHub as an open bug tracker for users to see what developers are working on. However, we at AdGuard create [a lot of open source software](https://github.com/search?o=desc&q=topic%3Aopen-source+org%3AAdguardTeam+fork%3Atrue&s=stars&type=Repositories).
-> * Privacy policy: https://adguard-vpn.com/privacy.html
+> * Privacy policy: https://adguard.com/privacy.html
 
 ## Overview
 
