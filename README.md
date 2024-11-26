@@ -111,7 +111,7 @@ Run `adguard-cli [command]` to use AdGuard CLI. Below are the available commands
 ### Subcommands
 
 - `activate`                     Activate the app
-- `reset-license`                Deactivate the app
+- `reset-activation`             Reset activation of the application
 - `configure`                    Run the configuration wizard
 - `start`                        Start AdGuard CLI
 - `stop`                         Stop AdGuard CLI
@@ -133,3 +133,6 @@ Run `adguard-cli [command]` to use AdGuard CLI. Below are the available commands
     - `enable`                   Enable a filter
     - `disable`                  Disable a filter
     - `update`                   Update filters
+- `export-logs`                  Export logs to a zip file
+    - `-o, --output TEXT`        Path to the output artifact. Can be a directory
+    - `-f, --force`              Overwrite the output artifact without asking
