@@ -19,7 +19,8 @@ jobs:
           for channel in nightly beta release; do
             TAG_NAME=$(git tag -l --sort -creatordate | grep -F "${channel}" | head -n1 || true)
             if [ -n "${TAG_NAME}" ]; then
-              git checkout ${channel}
+              git fetch origin ${channel}
+              git checkout -B ${channel} origin/${channel}
               curl -fsSL "https://github.com/AdguardTeam/AdGuardCLI/releases/download/${TAG_NAME}/install.sh" -o "install.sh"
               git add "install.sh"
             fi
