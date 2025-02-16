@@ -110,7 +110,7 @@ Run `adguard-cli [command]` to use AdGuard CLI. Below are the available commands
 
 ### Subcommands
 
-- `activate`                     Activate the app
+- `activate`                     Activate the license
 - `reset-license`                Reset an AdGuard license
 - `configure`                    Run the configuration wizard
 - `start`                        Start AdGuard CLI
