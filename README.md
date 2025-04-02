@@ -31,7 +31,7 @@
 
 ## Overview
 
-AdGuard CLI is the command-line version of AdGuard Ad Blocker.
+AdGuard CLI is the command-line version of AdGuard Ad Blocker. Learn more about it [in our Knowledge base](https://adguard.com/kb/adguard-for-linux/).
 
 ## Installation
 
