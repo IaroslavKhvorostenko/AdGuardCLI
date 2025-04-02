@@ -127,11 +127,12 @@ Run `adguard-cli [command]` to use AdGuard CLI. Below are the available commands
 - `update`                       Update AdGuard CLI
     - `-v, --verbose`            Show update script output
 - `filters`                      Manage filters
-    - `list`                     List installed filters
-        - `--all`                Show all filters
-    - `install`                  Install a filter
-    - `enable`                   Enable a filter
-    - `disable`                  Disable a filter
+    - `list`                     List installed and added filters, or all available filters if `--all` is specified
+    - `add`                      Add internal filter, by ID or name
+    - `install`                  Install a custom filter
+    - `remove`                   Remove internal or custom filter
+    - `enable`                   Enable the filter (Rules from this filter will be applied)
+    - `disable`                  Disable the filter (Rules from this filter will no longer be applied)
     - `update`                   Update filters
 - `export-logs`                  Export logs to a zip file
     - `-o, --output TEXT`        Path to the output artifact. Can be a directory
