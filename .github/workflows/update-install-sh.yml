@@ -23,9 +23,9 @@ jobs:
               git checkout -B ${channel} origin/${channel}
               curl -fsSL "https://github.com/AdguardTeam/AdGuardCLI/releases/download/${TAG_NAME}/install.sh" -o "install.sh"
               git add "install.sh"
+              if ! git diff-index --cached --quiet HEAD; then
+                git commit -m "Update install.sh"
+                git push origin HEAD
+              fi
             fi
           done
-          if ! git diff-index --cached --quiet HEAD; then
-            git commit -m "Update install.sh"
-            git push origin HEAD
-          fi
