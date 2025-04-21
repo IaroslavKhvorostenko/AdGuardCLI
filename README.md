@@ -59,43 +59,28 @@ curl -fsSL https://raw.githubusercontent.com/AdguardTeam/AdGuardCLI/nightly/inst
 
 Inside an archive file, there is a small file with a `.sig` extension that contains the signature data. In a hypothetical situation where the binary file inside an archive is replaced by someone, you’ll know it isn’t an official release from AdGuard.
 
-To verify the signature, you need to have the `gpg` tool installed.
+To verify the signature, you need to have the `openssl` tool version 1.1.1 or newer installed.
 
 First, import the AdGuard public key:
 
 ```shell
-gpg --keyserver 'keys.openpgp.org' --recv-key '28645AC9776EC4C00BCE2AFC0FE641E7235E2EC6'
+curl -fsSL https://raw.githubusercontent.com/AdguardTeam/AdGuardCLI/master/adguard_ed25519_pubkey.pem -o adguard_ed25519_pubkey.pem
 ```
+
+It will download public key, which should have the value `MCowBQYDK2VwAyEAN0NPZFtolGN+Cjyorh4Wo91vnBlLLQiWkbujeHDYbok=`.
 
 Then, verify the signature:
 
 ```shell
-gpg --verify /opt/adguard_cli/adguard-cli.sig 
-```  
-
-If you use a custom installation path, replace `/opt/adguard_cli/adguard-cli.sig` with the path to the signature file. It should be in the same directory as the binary file.
-
-You’ll see something like this:
-
-```
-gpg: assuming signed data in 'adguard-cli'
-gpg: Signature made Fri Nov 15 13:20:43 2024 +02
-gpg:                using RSA key 28645AC9776EC4C00BCE2AFC0FE641E7235E2EC6
-gpg:                issuer "devteam@adguard.com"
-gpg: Good signature from "AdGuard <devteam@adguard.com>" [ultimate]
+openssl pkeyutl -verify -inkey adguard_ed25519_pubkey.pem -pubin -sigfile /opt/adguard-cli/adguard-cli.sig -in /opt/adguard-cli/adguard-cli -rawin
 ```
 
-Check the following:
-- RSA key: must be `28645AC9776EC4C00BCE2AFC0FE641E7235E2EC6`;
-- Issuer name: must be `AdGuard`;
-- Email address: must be `devteam@adguard.com`.
+If you use a custom installation path, replace `/opt/adguard-cli` with the path to the adguard-cli and its signature file.
 
-There may also be the following warning:
+You’ll see the following message:
 
 ```
-gpg: WARNING: The key's User ID is not certified with a trusted signature!
-gpg:          There is no indication that the signature belongs to the owner.
-Primary key fingerprint: 2864 5AC9 776E C4C0 0BCE  2AFC 0FE6 41E7 235E 2EC6
+Signature Verified Successfully
 ```
 
 ### Usage
