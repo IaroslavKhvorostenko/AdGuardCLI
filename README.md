@@ -134,6 +134,9 @@ Run `adguard-cli [command]` to use AdGuard CLI. Below are the available commands
     - `update`                   Update filters
     - `add`                      Add a filter by its ID or name
     - `remove`                   Remove a filter by its ID or name
+- `export-logs`                  Export logs to a zip file
+    - `-o, --output TEXT`        Path to the output artifact. Can be a directory
+    - `-f, --force`              Overwrite the output artifact without asking
 
 ### Per-app AdGuard CLI configuration
 AdGuard CLI behaviour can be configured per-app. See the `apps` section of `proxy.yaml` for details.
